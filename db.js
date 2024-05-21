@@ -48,7 +48,12 @@
 
 
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://gofood:rahna@cluster0.fznakuv.mongodb.net/foodmern?retryWrites=true&w=majority&appName=Cluster0';
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+
+const mongoURI = process.env.MONGO_URI;
+const jwtSecret = process.env.JWT_SECRET;
+// const mongoURI = 'mongodb+srv://gofood:rahna@cluster0.fznakuv.mongodb.net/foodmern?retryWrites=true&w=majority&appName=Cluster0';
 
 const connectToDB = async () => {
   try {
