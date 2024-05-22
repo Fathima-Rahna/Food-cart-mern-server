@@ -1,17 +1,3 @@
-// const express = require('express')
-// const app  = express()
-
-// const PORT =5001
-// const mongoDB = require("./db")
-// mongoDB();
-
-// app.get('/', (req, res) => {
-//     res.send('Hello World!');
-// });
-
-// app.listen(PORT,()=>{
-//     console.log(`project fair started at port:${PORT}`);
-// })
 
 
 
@@ -19,7 +5,9 @@
 const express = require('express');
 const app = express();
 
-const PORT = 5001;
+// const PORT = 5001;
+
+const PORT = process.env.PORT || 5001;
 const connectToDB = require('./db');
 
 connectToDB();
@@ -42,7 +30,7 @@ app.get('/', (req, res) => {
 
 
 app.listen(PORT, () => {
-  console.log(`Project fair started at port:${PORT}`);
+  console.log(`Food Cart started at port:${PORT}`);
 });
 
 
